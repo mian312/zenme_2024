@@ -8,7 +8,7 @@ function Hero() {
                 Student Mental Health Support
             </h2>
             <p className="mt-5 ml-6 text-center max-md:max-w-full">
-                Connect with ZENMe for personalized AI-based mental health support tailored to students' needs.
+                Connect with ZENMe for personalized AI-based mental health support tailored to students needs.
                 <br />
                 Start your journey with us...
             </p>
