@@ -3,9 +3,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const NewChat = () => {
-  const [messages, setMessages] = useState([
-    { role: 'assistant', content: sessionStorage.getItem('suggestion') },
-  ]);
+  const [messages, setMessages] = useState([]);
+
+  useEffect(() => {
+    const storedSuggestion = sessionStorage.getItem('suggestion');
+    if (storedSuggestion) {
+      setMessages([{ role: 'assistant', content: storedSuggestion }]);
+    }
+  }, []);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -77,11 +82,10 @@ const NewChat = () => {
               />
             )}
             <div
-              className={`p-3 rounded-md max-w-xs ${
-                message.role === 'user'
+              className={`p-3 rounded-md max-w-xs ${message.role === 'user'
                   ? 'bg-blue-500 text-white self-end'
                   : 'bg-gray-300 text-black self-start'
-              }`}
+                }`}
             >
               {message.content}
             </div>
