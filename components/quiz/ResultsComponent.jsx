@@ -113,7 +113,7 @@ const ResultsComponent = ({ responses, quiz }) => {
       fetchSuggestions(summary); // Fetch suggestions based on summary
     }
   }, [summary]);
-  
+
   // Store suggestions in session storage
   useEffect(() => {
     sessionStorage.setItem('suggestion', suggestions);
@@ -143,7 +143,7 @@ const ResultsComponent = ({ responses, quiz }) => {
             alt="Your GIF"
             className="w-16 h-16 rounded-full shadow-lg object-cover"
           />
-          <h3 className="text-sm font-semibold text-gray-500">Let's talk</h3>
+          <h3 className="text-sm font-semibold text-gray-500">Let talk</h3>
         </Link>
       </div>
 
