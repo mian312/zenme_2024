@@ -53,11 +53,11 @@ const QuizComponent = ({ selectedQuiz }) => {
   };
 
   return (
-    <div className="mt-8 w-full max-w-3xl">
-      <h2 className="text-xl font-semibold mb-4">Quiz</h2>
+    <div className="mt-8 w-2/3">
 
       {!showResults ? (
         <>
+          <h2 className="text-xl font-semibold mb-4">Answer the Questions</h2>
           <QuestionComponent
             question={questions[currentQuestion].question}
             responseOptions={questions[currentQuestion].response}
@@ -82,7 +82,7 @@ const QuizComponent = ({ selectedQuiz }) => {
           </div>
         </>
       ) : (
-        <ResultsComponent responses={responses} quiz={selectedQuiz}/>
+        <ResultsComponent responses={responses} quiz={selectedQuiz} />
       )}
     </div>
   );

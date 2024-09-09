@@ -16,6 +16,7 @@ const ResultsComponent = ({ responses, quiz }) => {
   const [suggestions, setSuggestions] = useState(null); // Store API suggestions
   const [loading, setLoading] = useState(false); // Loading state for API
   const [error, setError] = useState(null); // Error state
+  const totalScore = responses.reduce((acc, response) => acc + response.mainScore, 0); // Calculate total score
 
   // Get the selected quiz questions from the questionBank using the quiz type string
   const selectedQuizQuestions = questionBank[quiz];
@@ -122,6 +123,13 @@ const ResultsComponent = ({ responses, quiz }) => {
   return (
     <div className="mt-8 p-6 bg-gray-100 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4">Your Results</h2>
+      {/* Print User's condition */}
+      <div className="mb-4">
+      {totalScore <= 10 && <p className="text-green-500 font-semibold">You are doing great! Keep it up!</p>}
+      {totalScore > 10 && totalScore <= 20 && <p className="text-yellow-500 font-semibold">You are doing okay. Take care of yourself!</p>}
+      {totalScore > 20 && <p className="text-red-500 font-semibold">You might need some help. Please seek professional advice.</p>}
+      </div>
+      
 
       {/* Loading, Error, and Summary States */}
       {loading && <p>Loading...</p>}
@@ -134,18 +142,18 @@ const ResultsComponent = ({ responses, quiz }) => {
         </div>
       )}
 
-
       {/* Bot Container */}
-      <div className="fixed bottom-4 right-4">
-        <Link href='/new-chat'>
+      {suggestions && <div className="static sm:end bottom-5 flex items-end m-4 justify-end">
+        <p className='flex text-2xl font-semibold max-sm:text-base'>Talk with our bot here...</p>
+        <Link href='/new-chat' className='flex ml-2'>
           <img
             src="/images/hi-bot.gif"
             alt="Your GIF"
             className="w-16 h-16 rounded-full shadow-lg object-cover"
           />
-          <h3 className="text-sm font-semibold text-gray-500">Let talk</h3>
+          <h3 className="text-sm font-semibold text-gray-500">Let's talk</h3>
         </Link>
-      </div>
+      </div>}
 
     </div>
   );

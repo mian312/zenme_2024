@@ -10,13 +10,13 @@ function Footer() {
                 </nav>
                 <div className="flex gap-5 justify-between items-start px-20 py-7 mt-16 max-md:px-5 max-md:mt-10">
                     <a href="#facebook" aria-label="Facebook">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d5c5e8307d0790afa3481dc1cbd594775aa1f5823da69ff30d45cfe9347ac361?placeholderIfAbsent=true&apiKey=53833057d7ee44b4a2660248a893a554" alt="" className="object-contain w-9 aspect-[1.06]" />
+                        <img loading="lazy" src="/images/footer/facebook.png" alt="" className="object-contain w-9 aspect-[1.06]" />
                     </a>
                     <a href="#twitter" aria-label="Twitter">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/48937d29b8d6af8d698e85270ca14c896035dfd9e704735875259e2a8c257c32?placeholderIfAbsent=true&apiKey=53833057d7ee44b4a2660248a893a554" alt="" className="object-contain shrink-0 w-9 aspect-[1.06]" />
+                        <img loading="lazy" src="/images/footer/twiter.png" alt="" className="object-contain shrink-0 w-9 aspect-[1.06]" />
                     </a>
-                    <a href="#instagram" aria-label="Instagram">
-                        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e2c5876024808a423a37e46b75f42e68db8439e76793553bb814738b86a1a30?placeholderIfAbsent=true&apiKey=53833057d7ee44b4a2660248a893a554" alt="" className="object-contain shrink-0 aspect-[2.47] w-[84px]" />
+                    <a href="#youtube" aria-label="Youtube">
+                        <img loading="lazy" src="/images/footer/youtube.png" alt="" className="object-contain shrink-0 aspect-[2.47] w-[84px]" />
                     </a>
                 </div>
             </div>

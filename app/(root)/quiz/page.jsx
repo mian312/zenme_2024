@@ -23,7 +23,7 @@ const QuizPage = () => {
     <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gray-100">
       {selectedQuiz ? (
         <div className="mb-6 p-4 bg-white rounded-lg shadow-md">
-          Tell us more about your <strong>{selectedQuiz.label}</strong> problem.
+          About your <strong>{selectedQuiz.label}</strong> problem.
         </div>
       ) : (
         <div className="space-y-4">
@@ -32,7 +32,7 @@ const QuizPage = () => {
             {quizTypes.map((quiz) => (
               <button
                 key={quiz.value}
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
+                className="px-4 py-2 bg-sky-500 text-white rounded hover:bg-sky-700"
                 onClick={() => setSelectedQuiz(quiz)}
               >
                 <label key={quiz.value} className="flex items-center">
