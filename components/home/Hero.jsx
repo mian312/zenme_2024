@@ -12,7 +12,7 @@ function Hero() {
                         Tailored to Your Needs
                     </h1>
                     <p className="mb-8 leading-relaxed">
-                        Connect with ZENMe for personalized AI-based mental health support tailored to students' needs.
+                        Connect with ZENMe for personalized AI-based mental health support tailored to students needs.
                         Start your journey with us today and receive guidance designed just for you.
                     </p>
                     <div className="flex justify-center">
