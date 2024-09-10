@@ -85,7 +85,7 @@ const NewChat = () => {
               className={`p-3 rounded-md max-w-xs ${message.role === 'user'
                   ? 'bg-blue-500 text-white self-end'
                   : 'bg-gray-300 text-black self-start'
-                }`}
+                } break-words whitespace-pre-wrap`}
             >
               {message.content}
             </div>

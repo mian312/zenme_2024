@@ -31,7 +31,7 @@ export async function POST(request) {
                     "content": query
                 }
             ],
-            model: 'gemma2-9b-it',
+            model: 'gemma-7b-it',
             temperature: 0.2,
             max_tokens: 256,
             top_p: 1,
