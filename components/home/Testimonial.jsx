@@ -1,25 +1,68 @@
-import React from 'react';
+'use client';
 
-function Testimonial() {
-return (
-    <section className="flex z-10 flex-col px-7 pt-16 pb-9 mt-24 w-full bg-orange-400 max-md:px-5 max-md:mt-10 max-md:max-w-full">
-        <blockquote className="text-3xl text-center font-bold text-white max-md:max-w-full">
-            &quot;ZENMe has been a game-changer for me.
-            <br />
-            It&apos;s like having a supportive friend who understands
-            <br />
-            my struggles.&quot;
-        </blockquote>
-        <div className="flex gap-1.5 self-center ml-5 max-w-full w-[206px] max-md:mt-10">
-            <div className="flex flex-col justify-center items-center px-0.5 w-10 h-10 bg-zinc-300 rounded-[30px]">
-                <img loading="lazy" src="/images/testimonial/testimonial-1.png" alt="Audrey Hall" className="object-contain rounded-full aspect-square w-[46px]" />
+import React, { useState, useEffect } from 'react';
+
+// Testimonial Data (can be controlled from here)
+const testimonials = [
+  {
+    quote: "ZENMe has been a game-changer for me. It's like having a supportive friend who understands my struggles.",
+    name: "Audrey Hall",
+    title: "Student",
+    image: "/images/testimonial/testimonial-1.png"
+  },
+  {
+    quote: "I've never felt more supported in my mental health journey. ZENMe is the best tool I've found.",
+    name: "John Doe",
+    title: "Graduate",
+    image: "/images/testimonial/testimonial-1.png"
+  },
+  {
+    quote: "Using ZENMe has helped me manage my anxiety. It’s like having a personal therapist 24/7.",
+    name: "Jane Smith",
+    title: "University Student",
+    image: "/images/testimonial/testimonial-1.png"
+  }
+];
+
+function TestimonialCarousel() {
+  const [current, setCurrent] = useState(0);  // Track the current testimonial
+
+  // Automatically cycle through testimonials
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000); // 1 second interval
+
+    return () => clearInterval(interval);  // Cleanup interval on component unmount
+  }, []);
+
+  const { quote, name, title, image } = testimonials[current];
+
+  return (
+    <section id='testimonial' className="text-gray-600 body-font bg-orange-400">
+      <div className="container px-5 py-12 mx-auto">
+        <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
+          <p className="leading-relaxed text-lg text-white">
+            &quot;{quote}&quot;
+          </p>
+          <span className="inline-block h-1 w-10 rounded bg-white mt-8 mb-6"></span>
+          <div className="flex justify-center items-center">
+            <div className="flex-shrink-0 w-12 h-12">
+              <img
+                className="rounded-full object-cover"
+                src={image}
+                alt={name}
+              />
             </div>
-            <cite className="grow shrink my-auto text-2xl text-white w-[142px]">
-                Audrey Hall
-            </cite>
+            <div className="ml-4 text-left">
+              <h2 className="text-white font-medium title-font tracking-wider text-sm">{name}</h2>
+              <p className="text-gray-200">{title}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
-);
+  );
 }
 
-export default Testimonial;
+export default TestimonialCarousel;

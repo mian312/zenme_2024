@@ -53,7 +53,7 @@ const QuizComponent = ({ selectedQuiz }) => {
   };
 
   return (
-    <div className="mt-8 w-2/3">
+    <div className="m-auto w-full">
 
       {!showResults ? (
         <>

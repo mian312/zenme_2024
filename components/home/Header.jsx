@@ -2,13 +2,21 @@ import React from 'react';
 
 function Header() {
   return (
-    <header className="flex flex-col w-full bg-zinc-300 max-md:max-w-full">
-      <div className="flex flex-wrap gap-5 justify-between items-start px-16 py-2 w-full font-bold text-black bg-zinc-300 max-md:px-5 max-md:max-w-full">
-        <h1 className="text-3xl">ZENMe</h1>
-        <nav className="flex gap-10 mt-2 text-sm">
-          <a href="#support">Support ZENMe</a>
-          <a href="#about">About Us</a>
+    <header class="text-gray-600 bg-blue-500 body-font">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <span class="ml-3 text-3xl font-semibold text-white">ZenME</span>
+        </a>
+        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+          <a href='#hero' class="mr-5 hover:text-gray-900">Get Started</a>
+          <a href='#feature' class="mr-5 hover:text-gray-900">Feature</a>
+          <a href='#testimonial' class="mr-5 hover:text-gray-900">Testimonial</a>
         </nav>
+        {/* <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7"></path>
+          </svg>
+        </button> */}
       </div>
     </header>
   );

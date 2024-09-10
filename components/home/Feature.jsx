@@ -18,22 +18,23 @@ const features = [
     title: "Confidential Conversations",
     description: "Engage in confidential conversations with ZENMe knowing that your privacy and mental well-being are our top priorities.",
     imageSrc: "/images/feature/feature-3.png",
+    imageAlt: "Confidential Conversations illustration"
   }
 ];
 
 function FeatureSection() {
   return (
-    <section className="flex flex-col pr-2.5 pl-8 mt-9 w-full max-md:pl-5 max-md:max-w-full">
-      <img loading="lazy" src="/images/feature/Hero.png" alt="Mental Health Support" className="object-contain rounded-3xl aspect-[1.62] max-md:mr-2.5 max-md:max-w-full" />
-      <h2 className="self-center mt-14 text-2xl font-bold text-black max-md:mt-10 max-md:max-w-full">
-        Personalized Mental Health Support
-      </h2>
-      <p className="self-center mt-5 text-lg text-black rotate-[0.003950622913826471rad] max-md:max-w-full">
-        Receive tailored AI response to support your mental well-being
-      </p>
-      {features.map((feature, index) => (
-        <FeatureItem key={index} {...feature} reverse={index % 2 !== 0} />
-      ))}
+    <section id='feature' className="text-gray-600 body-font">
+      {/* <h1 className="sm:text-3xl text-4xl font-bold title-font text-gray-900 mb-4 text-center">
+        Features
+      </h1> */}
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {features.map((feature, index) => (
+            <FeatureItem key={index} index={index} {...feature} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
