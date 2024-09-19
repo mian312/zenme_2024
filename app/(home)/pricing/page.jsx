@@ -63,7 +63,7 @@ const PricingPage = () => {
                 <span className="block text-indigo-600">Free Access</span>
               </h2>
               <p className="mt-4 text-lg leading-6 text-gray-500">
-                We're excited to offer you free access to our beta version. Your feedback is invaluable as we refine and improve our service.
+                We are excited to offer you free access to our beta version. Your feedback is invaluable as we refine and improve our service.
               </p>
               <ul className="mt-8 space-y-4">
                 <li className="flex items-start">
@@ -89,7 +89,7 @@ const PricingPage = () => {
           </div>
           <div className="pt-12 pb-12 px-6 sm:pt-16 sm:px-16 lg:py-16 lg:pr-0 xl:py-20 xl:px-20 lg:flex lg:flex-col lg:justify-center bg-indigo-50">
             <div className="max-w-lg mx-auto lg:max-w-none">
-              <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Why It's Free</h3>
+              <h3 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">Why Is It Free ?</h3>
               <p className="mt-4 text-lg text-gray-500">
                 We believe in creating value for our users. By offering free access during our beta phase, we aim to:
               </p>
@@ -117,7 +117,7 @@ const PricingPage = () => {
               Contact Us
             </h2>
             <p className="mt-4 text-lg text-gray-500">
-              Have questions or feedback? We'd love to hear from you!
+              Have questions or feedback? We would love to hear from you!
             </p>
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
               <div>
@@ -170,7 +170,7 @@ const PricingPage = () => {
                     name="subject"
                     id="subject"
                     className={`shadow-sm block w-full sm:text-sm rounded-md p-3 ${errors.subject ? 'border-red-300 focus:ring-red-500 focus:border-red-500' : 'border-gray-300 focus:ring-indigo-500 focus:border-indigo-500'}`}
-                    placeholder="What's this about?"
+                    placeholder="What is this about?"
                     value={formData.subject}
                     onChange={handleChange}
                   />

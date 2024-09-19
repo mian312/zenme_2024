@@ -68,10 +68,10 @@ const AboutPage = () => {
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <h1 className="text-4xl font-bold text-gray-900 mb-6 animate-fadeIn">Discover Inner Peace with Zenme</h1>
             <p className="text-lg text-gray-700 mb-6 animate-slideInFromLeft">
-              Zenme is your personal guide to mindfulness and tranquility. Our app combines ancient wisdom with cutting-edge technology to help you navigate the challenges of modern life with grace and ease.
+              ZENMe is an innovative stress detection and management app designed to help users identify and alleviate stress through personalized insights and techniques. Utilizing a combination of user data, mood tracking, and self-assessment tools, ZENMe provides a comprehensive understanding of your stress levels.
             </p>
             <p className="text-lg text-gray-700 animate-slideInFromLeft">
-              Whether you're a seasoned meditator or just starting your journey, Zenme provides personalized experiences to help you reduce stress, improve focus, and cultivate inner harmony.
+              Whether you are seeking to manage everyday stress or simply looking for a moment of calm, ZENMe is here to support you on your journey to better mental health. Please remember, while ZENMe is a valuable tool for wellness, it is not a substitute for professional medical advice or treatment.
             </p>
           </div>
           <div className="lg:w-1/2">
