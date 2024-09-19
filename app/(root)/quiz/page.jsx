@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import QuizComponent from '@/components/quiz/QuizComponent';
+import Image from 'next/image';
 
 const quizTypes = [
   { label: 'Depression', value: 'depressionQuestions' },
@@ -32,7 +33,7 @@ const QuizPage = () => {
         {/* Image before selecting quiz */}
         {!selectedQuiz && (
           <div className="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
-            <img alt="feature" className="object-cover object-center" src="/images/quiz/select.png" />
+            <Image height={900} width={900} alt="feature" className="object-cover object-center" src="/images/quiz/select.png" />
           </div>
         )}
 

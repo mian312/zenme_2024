@@ -1,23 +1,53 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <header class="text-gray-600 bg-blue-500 body-font">
-      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <span class="ml-3 text-3xl font-semibold text-white">ZenME</span>
-        </a>
-        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          <a href='#hero' class="mr-5 hover:text-gray-900">Get Started</a>
-          <a href='#feature' class="mr-5 hover:text-gray-900">Feature</a>
-          <a href='#testimonial' class="mr-5 hover:text-gray-900">Testimonial</a>
+    <header className="w-full px-4 sticky top-0 z-50 bg-sky-400 shadow-md">
+      <div className="max-w-7xl mx-auto flex justify-between items-center p-5">
+        <div className="flex items-center">
+          <Link href="/" className="text-white text-3xl font-semibold">
+            ZenME
+          </Link>
+        </div>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-6 text-white">
+          <Link href="/about" className="hover:text-gray-300 transition duration-300">About Us</Link>
+          <Link href="/pricing" className="hover:text-gray-300 transition duration-300">Pricing</Link>
         </nav>
-        {/* <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Button
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </button> */}
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            onClick={toggleNavbar}
+            className="text-white focus:outline-none"
+            aria-controls="mobile-menu"
+            aria-expanded={isOpen ? 'true' : 'false'}
+          >
+            {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-sky-500 shadow-md">
+          <div className="flex flex-col items-center space-y-4 py-4">
+            <Link href="/about" className="text-white hover:text-gray-300 transition duration-300">About Us</Link>
+            <Link href="/pricing" className="text-white hover:text-gray-300 transition duration-300">Pricing</Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
